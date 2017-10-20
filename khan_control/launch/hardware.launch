@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="khan" pkg="khan_control" type="khan_base"/>
+  <node name="khan_motors" pkg="khan_control" type="motor_control.py" output="screen"/>
+  <node name="khan_encoders" pkg="khan_control" type="quadrature_node.py"/>
+</launch>

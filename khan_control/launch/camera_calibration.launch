@@ -1,0 +1,18 @@
+<launch>
+  <group ns="stereo">
+    <node name="left" pkg="usb_cam" type="usb_cam_node">
+	<param name="video_device" value="/dev/video0" />
+	<param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="mjpeg" />
+      <remap from="camera" to="left"/>
+    </node>
+	<node name="right" pkg="usb_cam" type="usb_cam_node">
+	<param name="video_device" value="/dev/video1" />
+	<param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="mjpeg" />
+      <remap from="camera" to="right"/>
+    </node>
+  </group>
+</launch>
